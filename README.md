@@ -1,8 +1,8 @@
-## [Deep Learning for Video Object Segmentation: A Review](https://link.springer.com/content/pdf/10.1007/s10462-022-10176-7.pdf)
+# [Deep Learning for Video Object Segmentation: A Review](https://link.springer.com/content/pdf/10.1007/s10462-022-10176-7.pdf)
 
-![](https://img.shields.io/github/last-commit/gaomingqi/VOS-Review?style=flat-square&colorB=abcdef)
+![update date](https://img.shields.io/github/last-commit/gaomingqi/VOS-Review?style=flat-square&colorB=abcdef)
 
-This repo collects Deep Learning-based ***"Unsupervised (also termed zero-shot)"*** and ***"Semi-supervised (also termed one-shot)"*** Video Object Segmentation datasets and methods (with code links if applicable) discussed in the paper "Deep learning for video object segmentation: a review" [[paper](https://link.springer.com/content/pdf/10.1007/s10462-022-10176-7.pdf)]:  
+这个仓库收集了[论文](https://link.springer.com/content/pdf/10.1007/s10462-022-10176-7.pdf)“基于深度学习的视频对象分割：回顾”中讨论的基于深度学习的 ***“非监督（零样本学习）”*** 和 ***“半监督（单样本学习）”*** 的视频对象分割数据集和方法（附代码）。
 
 - [Section 3. Datasets](https://github.com/gaomingqi/VOS-Review/blob/master/Sections/Section_3_Datasets.md)
 
@@ -18,11 +18,11 @@ This repo collects Deep Learning-based ***"Unsupervised (also termed zero-shot)"
 
 - [Section 4.6. Long-term Propagation-based VOS Methods](https://github.com/gaomingqi/VOS-Review/blob/master/Sections/Section_4_6_Long_Prop.md)
 
-### :star2: [Awesome VOS Works](https://github.com/gaomingqi/awesome-video-object-segmentation) :star2:
+## :star2: [很棒的 VOS 工作](https://github.com/gaomingqi/awesome-video-object-segmentation) :star2:
 
-We also collect [VOS papers and datasets](https://github.com/gaomingqi/awesome-video-object-segmentation) proposed after the review and will continuously update the list. 
+我们还收集了在回顾中提出的 [VOS 论文和数据集](https://github.com/gaomingqi/awesome-video-object-segmentation) ，并且持续更新这个列表。
 
-If you find our review and repository useful for your research, please consider citing the paper:
+如果你发现我们的回顾和仓库对你的研究有用，请考虑引用这篇论文。
 
 ```bibtex
 @article{gao2023deep,
