@@ -61,13 +61,13 @@ BubbleNets[^Griffin&Corso,2019]从一个新的角度改进了基于在线精调�
 | 2020  | ECCV  |   S   | [Learning What to Learn for Video Object Segmentation](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470766.pdf) (LWL)                                                                                                                                                    |    [PyTorch](https://github.com/visionml/pytracking)    | 目标模型（预测多通道掩膜） | 目标模型参数                                   |
 | 2021  | CVPR  |   U   | [Target-Aware Object Discovery and Association for Unsupervised Video Multi-Object Segmentation](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhou_Target-Aware_Object_Discovery_and_Association_for_Unsupervised_Video_Multi-Object_Segmentation_CVPR_2021_paper.pdf) (TAODA) |                                                         | 目标模型（预测粗略掩膜）   | 目标模型参数                                   |
 
-OSMN（Object Segmentation via Network Modulation）[^Yang,2018]用一个基于条件批归一化（Conditional Batch Normalization, CBN）[^DeVries,2017]的模块来精调网络: 
+OSMN（Object Segmentation via Network Modulation）[^Yang,2018]用一个基于条件批归一化（Conditional Batch Normalization, CBN）[^DeVries,2017]的模块来精调网络:
 $$
 \mathbf{y}=\gamma\mathbf{x}+\boldsymbol{\beta}
 $$
 在第一帧的标注$\gamma$和前一帧的掩膜$\boldsymbol{\beta}$的引导下，中间特征$\mathbf{x}$被转换到$\mathbf{y}$。讨论: 网络输出域可以通过一次前向传递进行转换，这比在线精调的效率高出许多。但是用于的精调的信息较少，使得分割的质量并未像效率提升那么明显。
 
-A-GAME（A Generative Appearance Model for End-to-End VOS）[^Johnander,2019]使用高斯混合模型保证网络自适应对象: 
+A-GAME（A Generative Appearance Model for End-to-End VOS）[^Johnander,2019]使用高斯混合模型保证网络自适应对象:
 $$
 p(z_p=k|\mathbf{x}_p,\boldsymbol{\mu}_k,\boldsymbol{\Sigma}_k)=
 \frac
