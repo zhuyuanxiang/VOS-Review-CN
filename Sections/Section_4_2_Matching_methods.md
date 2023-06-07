@@ -206,6 +206,10 @@ SAT（Sate-Aware Tracker）[^Chen,2020]混合了SiamFC++[^Xu,2020]和SVOS的显�
 
 ![image-20230522151943359](./pics/Section_4_2_Matching_methods/image-20230522151943359.png)
 
+表19. 在YouTube-VOS 2019验证集上回顾的SVOS的分割性能
+
+![image-20230529112629305](./pics/Section_4_2_Matching_methods/image-20230529112629305.png)
+
 表20. 在DAVIS-2016验证集和YouTube-Objects、SegTrack v2和FBMS上回顾的UVOS方法的分割性能
 
 ![image-20230522152011174](./pics/Section_4_2_Matching_methods/image-20230522152011174.png)
