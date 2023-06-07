@@ -18,21 +18,21 @@ VPN（Video Propagatin Networks）[^Jampani,2017]是最早基于长时时间传�
 
 表14. 基于长时时间信息传播之BNN的方法汇总
 
-| Years | 会议 | 类型 | 论文标题、链接和缩写                                         |                             代码                             | 帧的数目 | 方向 | 时空信息     |
-| :---: | :--: | :--: | ------------------------------------------------------------ | :----------------------------------------------------------: | -------- | ---- | ------------ |
-| 2017  | CVPR |  S   | [Video Propagation Networks](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jampani_Video_Propagation_Networks_CVPR_2017_paper.pdf) (VPN) | [Caffe](https://github.com/varunjampani/video_prop_networks) | 9/t-1    | 前向 | 双向过滤响应 |
+| Years | 会议  | 类型  | 论文标题、链接和缩写                                                                                                                              |                             代码                             | 帧的数目 | 方向 | 时空信息     |
+| :---: | :---: | :---: | ------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------: | -------- | ---- | ------------ |
+| 2017  | CVPR  |   S   | [Video Propagation Networks](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jampani_Video_Propagation_Networks_CVPR_2017_paper.pdf) (VPN) | [Caffe](https://github.com/varunjampani/video_prop_networks) | 9/t-1    | 前向 | 双向过滤响应 |
 
 “帧的数目”：在训练/推理阶段包含的帧的数目；T: 视频长度；t: 目标帧的索引；NG: 没有给出。“方向”：时间信息传播方向。“时空信息”：长时时空信息的数据表示方法
 
 ### 4.6.2 基于 GAN 的 VOS 方法
 
-除了BNN，GAN也可以用于VOS。STCNN[^Xu,2019a]实现了一个帧生成模块，它根据之前的四个帧预测目标帧的情况。该模块以对抗性方式训练，隐匿地学习时间信息的传播和累积。讨论：有竞争力的结果表明基于GAN的技术在VOS上的有效性。由于StCNN只考虑了四帧的累积，因此未来建议在长时分析上更多研究。
+ 除了BNN，GAN也可以用于VOS。STCNN[^Xu,2019a]实现了一个帧生成模块，它根据之前的四个帧预测目标帧的情况。该模块以对抗性方式训练，隐匿地学习时间信息的传播和累积。讨论：有竞争力的结果表明基于GAN的技术在VOS上的有效性。由于STCNN只考虑了四帧的累积，因此未来建议在长时分析上更多研究。
 
 表14. 基于长时时间信息传播之GAN的方法汇总
 
-| Years | 会议 | 类型 | 论文标题、链接和缩写                                         |                       代码                        | 帧的数目 | 方向 | 时空信息             |
-| :---: | :--: | :--: | ------------------------------------------------------------ | :-----------------------------------------------: | -------- | ---- | -------------------- |
-| 2019  | CVPR |  S   | [Spatiotemporal CNN for Video Object Segmentation](https://openaccess.thecvf.com/content_CVPR_2019/papers/Xu_Spatiotemporal_CNN_for_Video_Object_Segmentation_CVPR_2019_paper.pdf) (STCNN) | [PyTorch](https://github.com/longyin880815/STCNN) | 4/4      | 前向 | 帧生成分支的中间输出 |
+| Years | 会议  | 类型  | 论文标题、链接和缩写                                                                                                                                                                       |                       代码                        | 帧的数目 | 方向 | 时空信息             |
+| :---: | :---: | :---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-----------------------------------------------: | -------- | ---- | -------------------- |
+| 2019  | CVPR  |   S   | [Spatiotemporal CNN for Video Object Segmentation](https://openaccess.thecvf.com/content_CVPR_2019/papers/Xu_Spatiotemporal_CNN_for_Video_Object_Segmentation_CVPR_2019_paper.pdf) (STCNN) | [PyTorch](https://github.com/longyin880815/STCNN) | 4/4      | 前向 | 帧生成分支的中间输出 |
 
 ### 4.6.3 基于 RNN 的 VOS 方法
 
@@ -54,14 +54,14 @@ VPN（Video Propagatin Networks）[^Jampani,2017]是最早基于长时时间传�
 
 表14. 基于长时时间信息传播之RNN的方法汇总
 
-| Years |  会议   | 类型 | 论文标题、链接和缩写                                         |                            代码                             | 帧的数目 | 方向 | 时空信息                                     |
-| :---: | :-----: | :--: | ------------------------------------------------------------ | :---------------------------------------------------------: | -------- | ---- | -------------------------------------------- |
-| 2017  |  CVPR   |  U   | [Learning Video Object Segmentation with Visual Memory](https://openaccess.thecvf.com/content_ICCV_2017/papers/Tokmakov_Learning_Video_Object_ICCV_2017_paper.pdf) (VM-VOS) |      [Website](http://lear.inrialpes.fr/research/lvo/)      | NG/T-1   | 双向 | 前向和反向隐藏状态的拼接                     |
-| 2017  | NeurIPS | S&U  | [MaskRNN: Instance Level Video Object Segmentation](https://proceedings.neurips.cc/paper/2017/file/6c9882bbac1c7093bd25041881277658-Paper.pdf) (MaskRNN) | [Website](https://sites.google.com/view/yuantinghu/maskrnn) | 7/t-1    | 前向 | 二进制对象掩膜                               |
-| 2018  |  ECCV   |  S   | [YouTube-VOS: Sequence-to-Sequence Video Object Segmentation](https://openaccess.thecvf.com/content_ECCV_2018/papers/Ning_Xu_YouTube-VOS_Sequence-to-Sequence_Video_ECCV_2018_paper.pdf) (S2S) |                                                             | <10/T-1  | 前向 | 前向隐藏状态                                 |
-| 2019  |  CVPR   |  S   | Rvos: End-to-end recurrent network for video object segmentation（RVOS） |                                                             | 4/T-1    | 前向 | 前向隐藏状态（整个交叉帧和内部帧的序列线索） |
-| 2018  |  ECCV   |  U   | [Pyramid Dilated Deeper ConvLSTM for Video Salient Object Detection](https://openaccess.thecvf.com/content_ECCV_2018/papers/Hongmei_Song_Pseudo_Pyramid_Deeper_ECCV_2018_paper.pdf) (PDB) |    [Caffe](https://github.com/shenjianbing/PDB-ConvLSTM)    | 4/T-1    | 双向 | 前向和反向隐藏状态的求和                     |
-| 2019  |  CVPR   |  U   | [Learning Unsupervised Video Object Segmentation through Visual Attention](https://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Learning_Unsupervised_Video_Object_Segmentation_Through_Visual_Attention_CVPR_2019_paper.pdf) (AGS) |         [Caffe](https://github.com/wenguanwang/AGS)         | <2/t-1   | 前向 | 前向隐藏状态                                 |
+| Years |  会议   | 类型  | 论文标题、链接和缩写                                                                                                                                                                                                                       |                            代码                             | 帧的数目 | 方向 | 时空信息                                     |
+| :---: | :-----: | :---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------: | -------- | ---- | -------------------------------------------- |
+| 2017  |  CVPR   |   U   | [Learning Video Object Segmentation with Visual Memory](https://openaccess.thecvf.com/content_ICCV_2017/papers/Tokmakov_Learning_Video_Object_ICCV_2017_paper.pdf) (VM-VOS)                                                                |      [Website](http://lear.inrialpes.fr/research/lvo/)      | NG/T-1   | 双向 | 前向和反向隐藏状态的拼接                     |
+| 2017  | NeurIPS |  S&U  | [MaskRNN: Instance Level Video Object Segmentation](https://proceedings.neurips.cc/paper/2017/file/6c9882bbac1c7093bd25041881277658-Paper.pdf) (MaskRNN)                                                                                   | [Website](https://sites.google.com/view/yuantinghu/maskrnn) | 7/t-1    | 前向 | 二进制对象掩膜                               |
+| 2018  |  ECCV   |   S   | [YouTube-VOS: Sequence-to-Sequence Video Object Segmentation](https://openaccess.thecvf.com/content_ECCV_2018/papers/Ning_Xu_YouTube-VOS_Sequence-to-Sequence_Video_ECCV_2018_paper.pdf) (S2S)                                             |                                                             | <10/T-1  | 前向 | 前向隐藏状态                                 |
+| 2019  |  CVPR   |   S   | Rvos: End-to-end recurrent network for video object segmentation（RVOS）                                                                                                                                                                   |                                                             | 4/T-1    | 前向 | 前向隐藏状态（整个交叉帧和内部帧的序列线索） |
+| 2018  |  ECCV   |   U   | [Pyramid Dilated Deeper ConvLSTM for Video Salient Object Detection](https://openaccess.thecvf.com/content_ECCV_2018/papers/Hongmei_Song_Pseudo_Pyramid_Deeper_ECCV_2018_paper.pdf) (PDB)                                                  |    [Caffe](https://github.com/shenjianbing/PDB-ConvLSTM)    | 4/T-1    | 双向 | 前向和反向隐藏状态的求和                     |
+| 2019  |  CVPR   |   U   | [Learning Unsupervised Video Object Segmentation through Visual Attention](https://openaccess.thecvf.com/content_CVPR_2019/papers/Wang_Learning_Unsupervised_Video_Object_Segmentation_Through_Visual_Attention_CVPR_2019_paper.pdf) (AGS) |         [Caffe](https://github.com/wenguanwang/AGS)         | <2/t-1   | 前向 | 前向隐藏状态                                 |
 
 ### 4.6.4 基于Transformer 的 VOS 方法
 
@@ -69,9 +69,9 @@ Transformers在最近的计算机视觉任务中被广泛探索[^Carion,2020][^W
 
 表14. 基于长时时间信息传播之Transformer的方法汇总
 
-| Years | 会议 | 类型 | 论文标题、链接和缩写                                         |                    代码                     | 帧的数目 | 方向   | 时空信息     |
-| :---: | :--: | :--: | ------------------------------------------------------------ | :-----------------------------------------: | -------- | ------ | ------------ |
-| 2021  | CVPR |  S   | [SSTVOS: Sparse Spatiotemporal Transformers for Video Object Segmentation](https://openaccess.thecvf.com/content/CVPR2021/papers/Duke_SSTVOS_Sparse_Spatiotemporal_Transformers_for_Video_Object_Segmentation_CVPR_2021_paper.pdf) (SSTVOS) | [Website](https://github.com/dukebw/SSTVOS) | NG/3     | 无方向 | 时空注意力图 |
+| Years | 会议  | 类型  | 论文标题、链接和缩写                                                                                                                                                                                                                        |                    代码                     | 帧的数目 | 方向   | 时空信息     |
+| :---: | :---: | :---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------------------------------------: | -------- | ------ | ------------ |
+| 2021  | CVPR  |   S   | [SSTVOS: Sparse Spatiotemporal Transformers for Video Object Segmentation](https://openaccess.thecvf.com/content/CVPR2021/papers/Duke_SSTVOS_Sparse_Spatiotemporal_Transformers_for_Video_Object_Segmentation_CVPR_2021_paper.pdf) (SSTVOS) | [Website](https://github.com/dukebw/SSTVOS) | NG/3     | 无方向 | 时空注意力图 |
 
 ### 4.6.5 基于长时时间传播的VOS方法小结
 
@@ -79,7 +79,22 @@ Transformers在最近的计算机视觉任务中被广泛探索[^Carion,2020][^W
 
 从表16、表17、表19和表20中可知，长时传播在最近的方法中很少使用，而且它也没有带来比其他方法更好的结果，即使在长时VOS基准（YouTube-VOS，表19）上来看也是如此。因此，长时传播对VOS的贡献并没有预期那么大，原因可以用表14来解释。该表显示，所讨论的方法在推理过程中累积了所有先前帧的时空信息。然而，由于计算成本的限制，在训练过程中只使用了有限的帧数。因此，现有的方法在很大程度上仍然是通过短时视频帧进行训练，这使得它们在某些情况下无法取得理想的结果。尽管基于Transformers的方法已经大大改善了VOS的性能，但是它仍然严重依赖帧短时时间相关性。未来的研究依然是有限资源下学习长时信息传播。
 
+表16. 在DAVIS数据集（包括：2016验证集、2017验证集、2017测试-开发集）回顾的SVOS方法的分割性能
 
+![image-20230519171657407](./pics/Section_4_1_Online_methods/image-20230519171657407.png)
 
+![image-20230519171816030](./pics/Section_4_1_Online_methods/image-20230519171816030.png)
 
+S.techs: 空间技术；O: 在线精调；M: 匹配技术；G: 图模型；T.techs: 时间技术；O: 光流；P: 掩膜传播；L: 长时时间传播；‘-’: 没有给出；$\mathcal{J,F}$: Jaccard指数和F-测度的均值（参见等式1）；$\mathcal{J}\&\mathcal{F}$: $\mathcal{J}$和$\mathcal{F}$的均值；C: COCO；D: DUTS；E: ECSSD；Hr: HRSOD；H: HKU-IS；P: PASCAL VOC；M: MSRA10K；Ma: Mapillary；S: SBD；So: SOC；I: ILSO；B: BIG；F: FS-1000；D16：DAVIS-2016；D17：DAVIS-2017；IV: ImageNet-Video；YV: YouTube-VOS；**粗体字数据集**：基于图像的；*斜体字数据集*：基于视频的；带星号的得分表示使用原始代码但是并非原始工作成果。
 
+表17. 在DAVIS数据集（包括：2016验证集、2017验证集、2017测试-开发集）回顾的SVOS方法的分割性能
+
+![image-20230519172721106](./pics/Section_4_1_Online_methods/image-20230519172721106.png)
+
+![image-20230519172916987](./pics/Section_4_1_Online_methods/image-20230519172916987.png)
+
+S.techs: 空间技术；O: 在线精调；M: 匹配技术；G: 图模型；T.techs: 时间技术；O: 光流；P: 掩膜传播；L: 长时时间传播；‘-’: 没有给出；$\mathcal{J,F}$: Jaccard指数和F-测度的均值（参见等式1）；$\mathcal{J}\&\mathcal{F}$: $\mathcal{J}$和$\mathcal{F}$的均值；C: COCO；D: DUTS；E: ECSSD；Hr: HRSOD；H: HKU-IS；P: PASCAL VOC；M: MSRA10K；Ma: Mapillary；S: SBD；So: SOC；I: ILSO；B: BIG；F: FS-1000；D16：DAVIS-2016；D17：DAVIS-2017；IV: ImageNet-Video；YV: YouTube-VOS；**粗体字数据集**：基于图像的；*斜体字数据集*：基于视频的；带星号的得分表示使用原始代码但是并非原始工作成果。
+
+表19. 在YouTube-VOS 2019验证集上回顾的SVOS的分割性能
+
+![image-20230529112629305](./pics/Section_4_2_Matching_methods/image-20230529112629305.png)
